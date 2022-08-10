@@ -1,4 +1,12 @@
 import { createApp } from 'vue'
+import {createStore} from 'vuex'
+import menu from './store.js';
 import App from './App.vue'
 
-createApp(App).mount('#app')
+window.$ = window.jQuery = require('jquery');
+
+const store = createStore(menu);
+
+createApp(App)
+    .use(store)
+    .mount('#app')
